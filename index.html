@@ -168,13 +168,16 @@
         }
 
         // Animasi tulisan "I LOVE ANNA"
-        // Ukuran teks berdenyut pelan: dasar 30px dengan variasi 3px
-        var fontSize = 30 + 3 * Math.sin(textPulse);
-        // Warna merah hati tetap
-        ctx.fillStyle = "rgb(255,0,0)";
-        ctx.font = "bold " + fontSize + "px Arial";
-        ctx.textAlign = "center";
-        ctx.fillText("I LOVE ANNA", width / 2, height - 50);
+var fontSize = 30 + 3 * Math.sin(textPulse);
+ctx.font = "bold " + fontSize + "px Arial";
+ctx.textAlign = "center";
+ctx.fillStyle = "rgb(255,0,0)";
+// Atur properti stroke untuk membuat teks tampak lebih tebal
+ctx.lineWidth = 4;
+ctx.strokeStyle = "rgb(255,0,0)";
+// Gambar stroke terlebih dahulu, kemudian isi teks
+ctx.strokeText("I LOVE ANNA", width / 2, height - 50);
+ctx.fillText("I LOVE ANNA", width / 2, height - 50);
 
         // Update variabel animasi teks dengan increment kecil untuk denyut yang pelan
         textPulse += 0.02;
